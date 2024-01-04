@@ -5,6 +5,7 @@ import Logo_avada from "./assets/img/logo_avada.svg";
 import './App.css'
 import TodosComponent from "./componnent/Todos/Todos";
 import {createContext, useState} from "react";
+import ModalAddTask from "./componnent/Modal/Modal";
 
 export const TodosContext = createContext()
 
@@ -44,7 +45,6 @@ function App() {
         addTodo
     }
 
-
     const logo = {
         topBarSource: Logo_avada,
         width: 144,
@@ -68,7 +68,8 @@ function App() {
                                 </div>
                             </Bleed>
                         </Page>
-                        <TodosComponent/>
+                        {todos.length !== 0 ? <TodosComponent/> :<div className="no-task">no task</div>}
+                        <ModalAddTask/>
                     </div>
                 </Frame>
             </div>
