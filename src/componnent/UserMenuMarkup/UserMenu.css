@@ -1,0 +1,21 @@
+.Polaris-TopBar-Menu__Activator {
+    background-color: white;
+    flex-direction: row-reverse;
+}
+
+.Polaris-TopBar-Menu__Activator:hover {
+    background-color: white;
+}
+
+.Polaris-TopBar-UserMenu__Details {
+    color: #202223;
+    font-size: 14px;
+}
+
+.Polaris-TopBar-UserMenu__Details > p {
+    font-size: 14px;
+}
+
+.Polaris-Avatar {
+    border-radius: 50%;
+}

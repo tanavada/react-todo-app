@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+.wrapper {
+    width: 791px;
+    margin: 0 auto;
+}
+.m-height-64 {
+    height: 64px;
+}
+.m-height-56 {
+    height: 56px;
+}
+.padding {
+    padding: 10px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #BABFC3;
+    border-radius: 4px;
+    color: #202223;
+}
+.text {
+    font-family: Arial, serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #202223;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-gap-col-10 {
+    column-gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.line-through {
+    text-decoration: line-through;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Polaris-Checkbox__ChoiceLabel {
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.border-task {
+    padding: 12px;
+    width: 100%;
+    border : 2px solid transparent;
+    border-radius: 4px;
+}
+.border-task-active {
+    border : 2px solid #458FFF;
+}
+.Polaris-Page {
+    padding: 0 12px;
+}
+.Polaris-Page__Content {
+    padding: 17px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Polaris-Button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.Polaris-Button--variantPrimary::before{
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.20) inset, 0 1px 0 0 rgba(0, 0, 0, 0.08);
+    background: none;
+    border-radius: 4px;
+
+}
+.Polaris-Button--variantPrimary {
+    background-color: #008060;
+    color: white;
+
 }
