@@ -42,10 +42,9 @@ function ModalAddTask() {
         >
             <Modal.Section>
                 <TextField
-                    autoComplete="off"
                     value={taskName}
                     onChange={handleInputChange}
-                />
+                 />
             </Modal.Section>
         </Modal>
     );
