@@ -1,6 +1,5 @@
-import {Badge, Button, ButtonGroup, Card, ResourceItem, ResourceList, Text} from '@shopify/polaris';
+import {Badge, Button, ButtonGroup, Card, InlineStack, Page, ResourceItem, ResourceList, Text} from '@shopify/polaris';
 import {useContext} from 'react';
-import ModalAddTask from '../Modal/Modal';
 import {TodosContext} from '../../App';
 
 function TodosComponent() {
@@ -9,7 +8,6 @@ function TodosComponent() {
         setSelectedItems,
         todos,
         setTodos,
-        setActive
     } = useContext(TodosContext);
 
     const completeTodo = (id) => {
@@ -59,39 +57,42 @@ function TodosComponent() {
     ];
 
     return (
-        <Card>
-            <ResourceList
-                resourceName={{
-                    singular: 'task',
-                    plural: 'tasks',
-                }}
-                items={todos}
-                renderItem={renderItem}
-                selectedItems={selectedItems}
-                onSelectionChange={setSelectedItems}
-                bulkActions={bulkActions}
-            />
-        </Card>
-    );
+        <Page>
+            <Card>
+                <ResourceList
+                    resourceName={{
+                        singular: 'task',
+                        plural: 'tasks',
+                    }}
+                    items={todos}
+                    renderItem={renderItem}
+                    selectedItems={selectedItems}
+                    onSelectionChange={setSelectedItems}
+                    bulkActions={bulkActions}
+                />
+            </Card>
+        </Page>
+    )
+        ;
 
     function renderItem(item) {
         const {id, name, isCompleted} = item;
         return (
             <ResourceItem key={id} id={id} accessibilityLabel={`View details for ${name}`}>
-                <div className='flex'>
+                <InlineStack align='space-between' blockAlign='center'>
                     <Text variant='bodyMd' fontWeight='bold' as='h3'>
                         {name}
                     </Text>
-                    <div className='flex flex-gap-col-10'>
+                    <InlineStack wrap={false} gap='100' blockAlign='center'>
                         {isCompleted ? <Badge tone='success'>Done</Badge> : <Badge>Pending</Badge>}
                         <ButtonGroup>
-                            {!isCompleted && <Button onClick={() => completeTodo(id)}>Complete</Button>}
+                            {!isCompleted && <Button variant='primary' onClick={() => completeTodo(id)}>Complete</Button>}
                             <Button variant='secondary' onClick={() => removeTodo()}>
                                 Delete
                             </Button>
                         </ButtonGroup>
-                    </div>
-                </div>
+                    </InlineStack>
+                </InlineStack>
             </ResourceItem>
         );
     }
